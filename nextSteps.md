@@ -1,9 +1,5 @@
 
-    db password 
-
-    auth against supabase
-
-    localhost/127.0.0.1:5173/@vite/client   proof -- do not show source code in browser
+    deployment :)
 
     <input id="email" type="text"   change to   <input id="email" type="email"
     \App\Http\Requests\Auth\LoginRequest::rules add 'email'
@@ -12,7 +8,12 @@
     Image_if_Api_worked -> translate / translations
     accept other image formats than 'png'
 
-    fix width/height in (api) loading state 
+    lazy loading behaviour / placeholder with fixed space 
     center cat images
+
+    breed - pagination 
+
+    search ...
+
 
     

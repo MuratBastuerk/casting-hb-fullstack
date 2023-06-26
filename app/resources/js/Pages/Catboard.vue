@@ -5,12 +5,6 @@ import CatFact from '@/Components/Cat/RandomFact.vue';
 import CatImage from '@/Components/Cat/RandomImage.vue';
 
 defineProps({
-    // canLogin: {
-    //     type: Boolean,
-    // },
-    // canRegister: {
-    //     type: Boolean,
-    // },
     laravelVersion: {
         type: String,
         required: true,

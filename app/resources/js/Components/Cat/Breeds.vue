@@ -23,8 +23,6 @@ export default {
             axios.get( '/api/cat_breeds' )
                 .then( response => this.breeds = response.data )
                 .catch( error => console.log( 'breeds error ' + error ) )
-
-            console.log( ' breeds ' + JSON.stringify( this.current_page ) )
         },
     }
 };
