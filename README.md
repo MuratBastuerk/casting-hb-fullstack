@@ -39,3 +39,41 @@ Erstelle einen Branch mit deinem Namen oder Alias. Nutze diesen Branch für dein
 
 ## Abschließende Worte
 Wir wünschen dir viel Erfolg und freuen uns auf deine Lösung. Falls du Fragen hast ist es gar kein Problem, melde dich gerne bei uns: ton-intern@hanseaticbank.de oder direkt bei Murat murat.bastuerk@hanseaticbank.de
+
+
+# hbton - Cat - Fact, Image, Breed and Seach...
+
+## Getting started
+
+    docker-compose run composer composer install
+    docker-compose run app php artisan migrate
+    docker-compose run app php artisan db:seed
+    docker-compose run app npm install
+
+    docker-compose up -d
+
+    call http://localhost 
+
+
+### how to do on the green field - it is only information!
+(don't do this in a developed git repo)
+
+- docker-compose run composer composer create-project laravel/laravel laravel_10_vue_js_auth
+- mv laravel_10_vue_js_auth/* ./
+
+- do not : docker-compose run composer composer require laravel/ui
+- do! (Laravel10) composer require laravel/breeze --dev
+
+- php artisan breeze:install blade
+- php artisan breeze:install vue
+
+- php artisan migrate
+- php artisan db:seed
+- npm install
+- npm run dev
+
+
+### in case of doing "docker-compose run composer composer require laravel/ui"
+- it ends in
+
+  Laravel 10 Spatie\LaravelIgnition\Exceptions\ViewException: Unable to locate file in Vite manifest: resources/js/app.ts. in file /app/vendor/laravel/framework/src/Illuminate/Foundation/Vite.php on line 737

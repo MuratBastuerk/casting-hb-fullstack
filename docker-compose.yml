@@ -1,0 +1,68 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: docker/php
+      target: php8
+    container_name: app_php
+    environment:
+      TZ: "Europe/Berlin"
+    depends_on:
+      - datasink
+    volumes:
+      - ${PROJECT_PATH}:/app
+
+  composer:
+    build:
+      context: docker/php
+      target: composerPhp81
+    container_name: app_composer
+    volumes:
+      - ${PROJECT_PATH}:/app
+    environment:
+      - COMPOSER_CACHE_DIR=/app/var/cache/composer
+#    command: composer install       ### composer install is primarily used in the 'deploying phase' to install our application on a production server
+
+  webserver:
+    image: nginx:1.23.3-alpine-slim
+    container_name: app_nginx
+    environment:
+      TZ: "Europe/Berlin"
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+    volumes:
+      - ${PROJECT_PATH}/public:/app/public
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+  datasink:
+    image: postgres:15.3-bullseye
+    container_name: app_pg
+    restart: always
+    environment:
+      POSTGRES_USER: ${DATASINK_USER}
+      POSTGRES_PASSWORD: ${DATASINK_PASSWORD}
+      POSTGRES_DB: ${DATASINK_DB}
+    ports:
+      - '5432:5432'
+    volumes:
+      - datasink_pg:/var/lib/postgresql/data
+
+  nodejs:
+    image: node:lts-alpine3.17
+    container_name: app_node
+    working_dir: /home/node/app
+    ports:
+      - "5173:5173"
+#    environment:
+#      - NODE_ENV=production
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ${PROJECT_PATH}:/home/node/app:cached
+    command: npm run dev
+    ### command: yarn encore dev watch  ### use the right production call !
+
+volumes:
+  datasink_pg:
