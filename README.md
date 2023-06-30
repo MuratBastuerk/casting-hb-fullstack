@@ -7,25 +7,33 @@ Baue ein Portal auf, wo sich Nutzer einloggen können, um coole Fakten ihres Lie
 - Der Kunde kann nach bestimmten Katzenrassen suchen und bekommt eine Liste von Katzen. Durch den Klick auf eine Katze wird die Profilseite aufgerufen. Denke bei der Auflistung darüber nach, ob paginiert werden sollte
 
 ## Deine Eckdaten
-Wie gesagt bildet die Fullstack-Aufgabe verschiedene Belange ab. Uns ist eher wichtig, wie du an die Aufgaben rangehst und warum du die so gelöst hast. Entscheide nach eigenem Ermessen, welche Aufgaben zu welchem Grad du erledigen möchtest. :) 
-### Backend
-- Baue eine REST-API, das die Katzenbilder und -Fakten durchschleust. Wähle dafür das Laravel Framework in der Version 10 und PHP > 8.1. 
-- Nutze im Hintergrund Katzen-Apis, um an die Daten zu kommen. Bilder bekommst du bei https://cataas.com/#/ und für die Fakten kannst du eine andere 
+Wie gesagt bildet die Fullstack-Aufgabe verschiedene Belange ab. Uns ist eher wichtig, wie du an die Aufgaben rangehst und warum du die so gelöst hast. Entscheide nach eigenem Ermessen, welche Aufgaben zu welchem Grad du erledigen möchtest. :) #
+
+## Frontend
+- Baue ein ansprechendes Frontend mit Javascript und Vue. Falls du möchtest, kannst du auch Typescript verwenden.
+
+## Option 1: Frage mit dem Frontend die Daten direkt ab
+- Benutze mit Vue einen Http-Client, um die Katzendaten zu holen. Bilder bekommst du bei https://cataas.com/#/ und für die Fakten kannst du eine andere 
 aussuchen, z.B. https://catfact.ninja/
-- Sichere deine REST-API ab, sodass das nur bestimmte User per HTTPS drauf zugreifen können. Wähle einen gängigen Mechanismus aus.
-- Richte hierfür den User "demo" mit Passwort "demo" ein.
-### Frontend
-- Baue ein Frontend für den User auf. Falls der User nicht eingeloggt ist, soll die Loginmaske eingeblendet werden. Nach dem Login werden die süßen Katzen angezeigt :) 
-- Nutze dafür das VueJs Framework, am liebsten mit Typescript. 
-- Hol die Katzendaten bei deiner REST-API ab
+- Überlege, ob und wie du zu bestimmten Catfacts ein passendes Katzenbild findest
+
+## Option 2: Baue ein Backend, das für dein Frontend Katzendaten durchschleust
+- Baue eine REST-API, das die Katzenbilder und -Fakten durchschleust. Nutze dafür PHP. Du kannst auch gerne Laravel verwenden.
+- Nutze im Backend Hintergrund Katzen-Apis, um an die Daten zu kommen. Bilder bekommst du bei https://cataas.com/#/ und für die Fakten kannst du eine andere 
+aussuchen, z.B. https://catfact.ninja/
+- Stelle sicher, dass nur der Nutzer demo mit dem Passwort demo aus dem Frontend kommend dein Backend abgefragen darf. Wähle einen geeigneten Mechanismus.
+- Benutze mit Vue einen Http-Client, um dich mit deinem Backend zu verbinden. Zeige die süssen Katzen und ihre Fakten! 
+- Überlege, ob und wie  du zu bestimmten Catfacts ein passendes Katzenbild findest
+
 ### Infrastruktur
-- Bei uns wird viel mit Docker gearbeitet. Es wäre also klasse, wenn alle Andwendungsteile containerisiert hochfahren. 
-- Entwickel ein docker-compose File, das dein Frontend, Backend und die Datenbank hochfährt. 
-### Diagramm
+- Bring den Code bei dir zum Laufen und zeige uns deine Lösung :)
+
+### Diagramm (optional)
 - Untermaure deine Lösung mit einem Diagramm. Mal gerne ein Architektur- oder Sequenzdiagramm. 
-- Falls du ein Sequenzdiagramm beifügst, wäre es klasse den Authentifizerungsflow zu berücksichtigen
+  
 ### Verbesserungen und Erweiterungen 
 Denke darüber nach, wie man die Anwendung in Zukunft erweitern oder verbessern kann. Welche Features wären noch super? Gibt es vielleicht technologische Ansätze, die noch Sinn machen? 
+
 ### Deine Richtlinien 
 - Kommentiere Code, wenn es sinnvoll ist
 - Berücksichtige die Benutzerführung im Frontend
