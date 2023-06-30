@@ -47,4 +47,4 @@ Denke darüber nach, wie man die Anwendung in Zukunft erweitern oder verbessern 
 Erstelle einen Branch mit deinem Namen oder Alias. Nutze diesen Branch für deine Entwicklung. Erstelle einen Pull-Request, wenn du fertig bist :) 
 
 ## Abschließende Worte
-Wir wünschen dir viel Erfolg und freuen uns auf deine Lösung. Falls du Fragen hast ist es gar kein Problem, melde dich gerne bei uns: ton-intern@hanseaticbank.de oder direkt bei Murat murat.bastuerk@hanseaticbank.de
+Wir wünschen dir viel Erfolg und freuen uns auf deine Lösung. Falls du Fragen hast ist es gar kein Problem, melde dich gerne bei uns: ton-intern@hanseaticbank.de.
